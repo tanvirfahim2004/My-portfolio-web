@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanvir FAHIM Software Engineer</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/test.css" />
+</head>
+
+<body>
+  <div class="site-wrapper">
+
+    <!-- ===== 1. NAVBAR ===== -->
+    <header class="navbar">
+      <div class="container navbar-container">
+        <a href="#home" class="logo">Tanvir <span class="Fahim">FAHIM..</span></a>
+
+        <nav class="nav-menu">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#services">What I Do</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="#contact" class="btn btn-primary hire-btn">Hire Me</a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ===== 2. HERO SECTION ===== -->
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+
+          <!-- left content -->
+          <div class="hero-content">
+            <span class="hero-intro">Hi, I'm Tanvir Fahim</span>
+            <h1 class="hero-title">Full Stack Software Engineer</h1>
+
+            <p class="hero-description">
+              I build scalable web apps, clean APIs, and modern user interfaces.
+              I love solving problems with Data Structures, System Design, and reliable code.
+            </p>
+
+            <div class="hero-socials">
+              <a href="https://github.com/tanvirfahim2004" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/tanvir-fahim-24512b344/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://x.com/tanvir_fahim00" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:tanvirfahim2004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://www.facebook.com/tanvirFahimF/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">Hire Me</a>
+              <a href="#" class="btn btn-outline">Download Resume</a>
+              <a href="https://github.com/tanvirfahim2004" class="btn btn-outline">View GitHub</a>
+            </div>
+
+            <!-- stats box -->
+            <div class="stats-box">
+              <div class="stat-item">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- right image -->
+          <div class="hero-image-wrapper">
+            <div class="circle-bg"></div>
+            <div class="profile-image">
+              <!-- Replace with your photo path -->
+              <img src="/assets/one.jpeg" alt="Alex Rivera" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== 3. SERVICES / WHAT I DO ===== -->
+      <section id="services" class="services">
+        <div class="container">
+          <h2 class="section-title centered">What I Do</h2>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-code"></i></div>
+              <h3>Web Development</h3>
+              <p>Modern websites and web apps with clean UI and fast performance.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-server"></i></div>
+              <h3>Backend Development</h3>
+              <p>Secure APIs, authentication, and server logic using best practices.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-laptop"></i></div>
+              <h3>Frontend Development</h3>
+              <p>Interactive interfaces with responsive layouts and smooth UX.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-database"></i></div>
+              <h3>Database Design</h3>
+              <p>Efficient relational & NoSQL schemas with optimized queries.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-plug"></i></div>
+              <h3>API Integration</h3>
+              <p>Payment gateways, third-party tools, and REST API integration.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="card-icon"><i class="fas fa-sitemap"></i></div>
+              <h3>System Design</h3>
+              <p>Designing scalable architecture for real-world software systems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4. ABOUT ===== -->
+      <section id="about" class="about">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img src="/assets/myself.jpeg" alt="about me">
+          </div>
+
+          <div class="about-content">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+              I'm Tanvir Fahim, a Software Engineer who enjoys building full-stack applications and solving
+              real problems. I focus on writing clean, maintainable code and improving performance.
+              I love working with Java, JavaScript, and modern web technologies.
+            </p>
+
+            <div class="about-highlights">
+              <div class="chip"><i class="fas fa-check"></i> Clean Code</div>
+              <div class="chip"><i class="fas fa-check"></i> Problem Solving</div>
+              <div class="chip"><i class="fas fa-check"></i> Team Collaboration</div>
+              <div class="chip"><i class="fas fa-check"></i> Fast Learning</div>
+            </div>
+
+            <a href="#" class="btn btn-primary">Download Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 5. SKILLS ===== -->
+      <section id="skills" class="skills">
+        <div class="container">
+          <h2 class="section-title centered">Skills</h2>
+
+          <div class="skills-row">
+
+            <div class="skill-circle">
+              <div class="circular-progress" data-percent="85">
+                <span class="progress-value">85%</span>
+              </div>
+              <p class="skill-label">Java</p>
+            </div>
+
+            <div class="skill-circle">
+              <div class="circular-progress" data-percent="80">
+                <span class="progress-value">80%</span>
+              </div>
+              <p class="skill-label">JavaScript</p>
+            </div>
+
+            <div class="skill-circle">
+              <div class="circular-progress" data-percent="75">
+                <span class="progress-value">75%</span>
+              </div>
+              <p class="skill-label">C++</p>
+            </div>
+
+            <div class="skill-circle">
+              <div class="circular-progress" data-percent="70">
+                <span class="progress-value">70%</span>
+              </div>
+              <p class="skill-label">Node.js</p>
+            </div>
+
+            <div class="skill-circle">
+              <div class="circular-progress" data-percent="78">
+                <span class="progress-value">78%</span>
+              </div>
+              <p class="skill-label">DSA</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 6. PROJECTS / PORTFOLIO ===== -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="section-title centered">Projects</h2>
+
+          <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+            <button class="filter-btn" data-filter="java">Java</button>
+          </div>
+
+          <div class="portfolio-grid" id="portfolioGrid">
+
+            <div class="portfolio-card" data-category="fullstack java">
+              <img src="/assets/emergency.jpeg" alt="Hostel Management System">
+              <div class="card-footer">
+                <h4>Emergency Hotline System</h4>
+                <p>Full Stack · Java</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="fullstack backend">
+              <img src="/assets/payoo.jpeg" alt="REST API">
+              <div class="card-footer">
+                <h4>PAYOO API Service</h4>
+                <p>Backend · Authentication</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="frontend">
+              <img src="/assets/portfolio.jpeg" alt="Portfolio Website">
+              <div class="card-footer">
+                <h4>Architect Portfolio</h4>
+                <p>Frontend · Responsive</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="fullstack">
+              <img src="https://placehold.co/600x400/12131a/ff7a00?text=ECOMMERCE" alt="Ecommerce">
+              <div class="card-footer">
+                <h4>E-commerce Platform</h4>
+                <p>Full Stack · Payments</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="java">
+              <img src="https://placehold.co/600x400/12131a/ff7a00?text=JAVA+APP" alt="Java App">
+              <div class="card-footer">
+                <h4>Student Result Manager</h4>
+                <p>Java · Desktop App</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="frontend backend">
+              <img src="https://placehold.co/600x400/12131a/ff7a00?text=CRYPTO+TRACKER" alt="Crypto Tracker">
+              <div class="card-footer">
+                <h4>Crypto Price Tracker</h4>
+                <p>API · Frontend + Backend</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Customize Card section -->
+      <section>
+        <!-- main container with cinematic background + vignette -->
+        <div class="background">
+          <!-- hero card -->
+          <main class="hero-card">
+
+            <!-- top row: logo + brand + top right name -->
+            <div class="card-header">
+              <div class="brand">
+                <div class="logo-circle">T</div>
+                <span class="brand-name">Transformers..</span>
+              </div>
+              <div class="big-name">
+                <span class="name-line">Tanvir</span>
+                <span class="name-line accent">FAHIM..</span>
+              </div>
+            </div>
+
+            <!-- main middle area: left (bottom-left text) + center ring + right vertical nav -->
+            <div class="card-middle">
+
+              <!-- bottom-left text (positioned absolutely inside grid, but we keep structure) -->
+              <div class="info-block">
+                <span class="info-line">Web <span class="accent">Developer</span></span>
+                <span class="info-line">From <span class="accent">BD</span></span>
+              </div>
+
+              <!-- center hero visual: ring + image -->
+              <div class="hero-center">
+                <div class="ring">
+                  <div class="ring-glow"></div>
+                  <img src="/assets/myself.jpeg" alt="artist portrait" class="ring-image">
+                </div>
+              </div>
+
+              <!-- right vertical navigation -->
+              <nav class="vertical-nav">
+                <ul>
+                  <li><a href="#">ABOUT</a></li>
+                  <li><a href="#">PROJECTS</a></li>
+                  <li><a href="#">CONTACT</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- bottom row: empty filler (grid keeps placement) + social icons -->
+            <div class="card-footer">
+              <div class="footer-left"></div> <!-- placeholder for spacing -->
+              <div class="social-icons">
+                <a href="https://x.com/tanvir_fahim00" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+                <a href="https://www.facebook.com/tanvirFahimF/" aria-label="Facebook"><i
+                    class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+      <!-- ===== 7. CONTACT ===== -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title centered">Let's Build Something Together</h2>
+
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="phone" placeholder=" " required>
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="form-group">
+                <select id="service" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="web">Web Development</option>
+                  <option value="backend">Backend / API</option>
+                  <option value="frontend">Frontend</option>
+                  <option value="java">Java Application</option>
+                </select>
+                <label for="service">Service of Interest</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="timeline" placeholder=" " required>
+                <label for="timeline">Timeline</label>
+              </div>
+              <div class="form-group fullwidth"></div>
+            </div>
+
+            <div class="form-row fullwidth-row">
+              <div class="form-group fullwidth">
+                <textarea id="details" rows="5" placeholder=" " required></textarea>
+                <label for="details">Project Details</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-send">Send</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== 8. FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-logo">Tanvir <span class="Fahim">FAHIM..</span></div>
+
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">What I Do</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="footer-social">
+          <a href="https://github.com/tanvirfahim2004" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/tanvir-fahim-24512b344/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:tanvirfahim2004@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="footer-contact">
+          <span><i class="fas fa-envelope"></i> tanvirfahim2004@gmail.com</span>
+          <span><i class="fas fa-phone-alt"></i> +880-1690177907</span>
+        </div>
+
+        <div class="footer-copyright">
+          © 2026 Tanvir FAHIM.. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== JS: Mobile Menu + Filter + Skill Animation ===== -->
+    <script>
+      // Mobile toggle
+      const toggle = document.getElementById('mobileToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      // Active nav link on click (simple)
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+          link.classList.add('active');
+          navLinks.classList.remove('show'); // close on mobile click
+        });
+      });
+
+      // Portfolio filtering (REAL)
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.portfolio-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.dataset.filter;
+
+          cards.forEach(card => {
+            const categories = card.dataset.category.split(" ");
+            if (filter === "all" || categories.includes(filter)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Circular progress animation
+      const circles = document.querySelectorAll('.circular-progress');
+      circles.forEach(circle => {
+        const percent = circle.getAttribute('data-percent');
+        circle.style.background = `conic-gradient(#ff7a00 ${percent * 3.6}deg, #2a2a2a 0deg)`;
+      });
+    </script>
+
+  </div>
+</body>
+
+</html>
