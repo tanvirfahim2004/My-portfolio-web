@@ -353,57 +353,69 @@
           </main>
         </div>
       </section>
-      <!-- ===== 7. CONTACT ===== -->
-      <form class="contact-form" action="https://formspree.io/f/xeelbjkp" method="POST">
+     <!-- ===== 7. CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title centered">Let's Build Something Together</h2>
 
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder=" " required>
-            <label for="name">Name</label>
-          </div>
+    <form id="contactForm"
+          class="contact-form"
+          action="https://formspree.io/f/xeelbjkp"
+          method="POST">
 
-          <div class="form-group">
-            <input type="email" id="email" name="email" placeholder=" " required>
-            <label for="email">Email</label>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name">Name</label>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <input type="tel" id="phone" name="phone" placeholder=" " required>
-            <label for="phone">Phone Number</label>
-          </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email">Email</label>
+        </div>
+      </div>
 
-          <div class="form-group">
-            <select id="service" name="service" required>
-              <option value="" disabled selected hidden></option>
-              <option value="Web Development">Web Development</option>
-              <option value="Backend / API">Backend / API</option>
-              <option value="Frontend">Frontend</option>
-              <option value="Java Application">Java Application</option>
-            </select>
-            <label for="service">Service of Interest</label>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <input type="tel" id="phone" name="phone" placeholder=" " required>
+          <label for="phone">Phone Number</label>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" id="timeline" name="timeline" placeholder=" " required>
-            <label for="timeline">Timeline</label>
-          </div>
-          <div class="form-group fullwidth"></div>
+        <div class="form-group">
+          <select id="service" name="service" required>
+            <option value="" disabled selected hidden></option>
+            <option value="Web Development">Web Development</option>
+            <option value="Backend / API">Backend / API</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Java Application">Java Application</option>
+          </select>
+          <label for="service">Service of Interest</label>
         </div>
+      </div>
 
-        <div class="form-row fullwidth-row">
-          <div class="form-group fullwidth">
-            <textarea id="details" name="project_details" rows="5" placeholder=" " required></textarea>
-            <label for="details">Project Details</label>
-          </div>
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="timeline" name="timeline" placeholder=" " required>
+          <label for="timeline">Timeline</label>
         </div>
+        <div class="form-group fullwidth"></div>
+      </div>
 
-        <button type="submit" class="btn btn-send">Send</button>
+      <div class="form-row fullwidth-row">
+        <div class="form-group fullwidth">
+          <textarea id="details" name="project_details" rows="5" placeholder=" " required></textarea>
+          <label for="details">Project Details</label>
+        </div>
+      </div>
 
-      </form>
+      <button id="sendBtn" type="submit" class="btn btn-send">Send</button>
+
+      <!-- Success / Error message area -->
+      <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+    </form>
+  </div>
+</section>
 
     </main>
 
@@ -443,52 +455,102 @@
 
     <!-- ===== JS: Mobile Menu + Filter + Skill Animation ===== -->
     <script>
-      // Mobile toggle
-      const toggle = document.getElementById('mobileToggle');
-      const navLinks = document.getElementById('navLinks');
+  // Mobile toggle
+  const toggle = document.getElementById('mobileToggle');
+  const navLinks = document.getElementById('navLinks');
 
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Active nav link on click (simple)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      navLinks.classList.remove('show'); // close on mobile click
+    });
+  });
+
+  // Portfolio filtering (REAL)
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.portfolio-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        const categories = card.dataset.category.split(" ");
+        if (filter === "all" || categories.includes(filter)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
       });
+    });
+  });
 
-      // Active nav link on click (simple)
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-          navLinks.classList.remove('show'); // close on mobile click
+  // Circular progress animation
+  const circles = document.querySelectorAll('.circular-progress');
+  circles.forEach(circle => {
+    const percent = circle.getAttribute('data-percent');
+    circle.style.background = `conic-gradient(#ff7a00 ${percent * 3.6}deg, #2a2a2a 0deg)`;
+  });
+
+  // ===== Contact form (Formspree) AJAX submit + success message + reset =====
+  const form = document.getElementById("contactForm");
+  const message = document.getElementById("formMessage");
+  const sendBtn = document.getElementById("sendBtn");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // reset message styles
+      message.className = "form-message";
+      message.textContent = "";
+
+      // loading state
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending...";
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
         });
-      });
 
-      // Portfolio filtering (REAL)
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.portfolio-card');
+        if (response.ok) {
+          message.classList.add("success");
+          message.textContent = "✅ Thank you! Your message has been sent.";
+          form.reset(); // clears inputs
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-
-          const filter = btn.dataset.filter;
-
-          cards.forEach(card => {
-            const categories = card.dataset.category.split(" ");
-            if (filter === "all" || categories.includes(filter)) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Circular progress animation
-      const circles = document.querySelectorAll('.circular-progress');
-      circles.forEach(circle => {
-        const percent = circle.getAttribute('data-percent');
-        circle.style.background = `conic-gradient(#ff7a00 ${percent * 3.6}deg, #2a2a2a 0deg)`;
-      });
-    </script>
+          // optional: auto-hide after 5s
+          setTimeout(() => {
+            message.className = "form-message";
+            message.textContent = "";
+          }, 5000);
+        } else {
+          message.classList.add("error");
+          message.textContent = "❌ Something went wrong. Please try again.";
+        }
+      } catch (err) {
+        message.classList.add("error");
+        message.textContent = "❌ Network error. Please try again.";
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Send";
+      }
+    });
+  }
+</script>
 
   </div>
 </body>
